@@ -112,7 +112,17 @@ main {
   background: #f4f1ea;
   border-radius: 16px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 }
+
+.panel-section { display: grid; gap: 6px; }
+
+.panel-section > * { margin: 0; }
+
+.panel-section:first-child { position: relative; z-index: 2; }
 
 .search { display: grid; gap: 6px; font-size: 13px; color: #5c6b72; }
 
@@ -127,8 +137,13 @@ main {
 }
 
 .matches {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   list-style: none;
-  margin: 8px 0 0;
+  margin: 0;
   padding: 0;
   border: 1px solid #e4ddd0;
   border-radius: 8px;
@@ -151,7 +166,7 @@ main {
 }
 
 .panel h3 {
-  margin: 18px 0 10px;
+  margin: 0 0 4px;
   font-size: 14px;
 }
 
@@ -173,7 +188,21 @@ main {
 
 .total strong { font-size: 28px; letter-spacing: -0.03em; }
 
-.trend { width: 100%; height: 72px; margin-top: 8px; }
+.trend-figure { margin: 0; flex-shrink: 0; }
+
+.trend-figure figcaption { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+
+.trend { width: 100%; height: auto; display: block; overflow: visible; }
+
+.trend .tick text { fill: #5c6b72; font-size: 10px; }
+
+.trend .tick line { stroke: #9aa5aa; }
+
+.trend .tick line.grid { stroke: #e4ddd0; }
+
+.trend .axis { stroke: #9aa5aa; }
+
+.trend .axis-label { fill: #5c6b72; font-size: 11px; }
 
 .trend polyline {
   fill: none;

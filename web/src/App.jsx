@@ -77,7 +77,7 @@ export default function App() {
       <header>
         <div>
           <p className="eyebrow">EDGAR 2026</p>
-          <h1>Who emits the most</h1>
+          <h1>Which country emits the most greenhouse gases?</h1>
         </div>
         <div className="filters">
           <label>
